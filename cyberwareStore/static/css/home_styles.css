@@ -1,0 +1,72 @@
+html, body {
+    height: 100%; 
+    margin: 0;
+    
+  }
+  
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+
+.layout{
+    background-color: rgb(39, 35, 44);
+    color:rgb(0, 0, 0) ;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+.navigationbar{
+   background-color: rgb(255, 255, 4);
+    text-align: center;
+    margin-top: 10px;
+    width: 1500px;
+    height: 85px;
+    
+}
+
+.navbar .navbar-brand{
+    margin: 0 50px;
+
+}
+
+.navigationbar .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px ;
+}
+
+.carousel{
+    background-color: rgb(255, 192, 203);
+    text-align: center;
+    margin-top: 15px;
+    width: 1500px;
+    height: 550px;
+}
+
+.quicklinks{
+    background-color: rgb(117, 185, 241);
+    text-align: center;
+    width: 1500px;
+    height: 100px;
+    justify-content: center;
+}
+
+.quicklinks .btn {
+    background-color: rgb(175, 218, 146);
+    color: brown;
+    border: none; 
+    margin: 0 5px; 
+}
+
+.footer{
+    background-color: rgb(117, 241, 154);
+    text-align: center;
+    margin-top: 15px;
+    width: 1500px;
+    height: 100px;
+}
+

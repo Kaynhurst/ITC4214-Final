@@ -1,8 +1,64 @@
-<!DOCTYPE html>
-<head>
+{% extends "home\layout.html" %}
 
-</head>
-<body>
-    <h1>Home Page</h1>
-</body>
-</html>
+
+
+{% block body %}
+
+<div class="d-grid gap-25">
+    <div class="searchbar grid-item">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="grid-item carousel mb-5">
+        <!-- Featured Random Items Carousel -->
+        <h3>Featured Items</h3>
+        <div id="featuredItems" class="carousel slide" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators d-none">
+                <li data-bs-target="#featuredItems" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#featuredItems" data-bs-slide-to="1"></li>
+                <li data-bs-target="#featuredItems" data-bs-slide-to="2"></li>
+                <li data-bs-target="#featuredItems" data-bs-slide-to="3"></li>
+                <li data-bs-target="#featuredItems" data-bs-slide-to="4"></li>
+            </ol>
+
+            <!-- Featured Items -->
+            <div class="carousel-inner d-flex justify-contents">
+                <div class="carousel-item active">
+                    <img src="..\static\images\placeholder_item.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="..\static\images\placeholder_item.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="..\static\images\placeholder_item.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="..\static\images\placeholder_item.png" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="..\static\images\placeholder_item.png" alt="">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredItems" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredItems" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="grid-item quicklinks">
+        <button class="btn btn-lg px-4 mx-2"><i class="bi bi-search"></i></button>
+        <button class="btn btn-lg px-4 mx-2"><i class="bi bi-search"></i></button>
+        <button class="btn bbtn-lg px-4 mx-2"><i class="bi bi-search"></i></button>
+    </div>
+
+</div>
+
+{% endblock %}
