@@ -1,15 +1,15 @@
-{% extends "home\layout.html" %}
+{% extends "base.html" %}
 
 
+{% block title%} Cyberware Store {% endblock %}
 
-{% block body %}
+{% block extra_css %}
+    <link rel="stylesheet" href="..\static\css\home.css">
+{% endblock %}
 
-<div class="d-grid gap-25">
-    <div class="searchbar grid-item">
-        <input type="text" placeholder="Search...">
-    </div>
+{% block content %}
 
-    <div class="grid-item carousel mb-5">
+    <div class="grid-item carousel">
         <!-- Featured Random Items Carousel -->
         <h3>Featured Items</h3>
         <div id="featuredItems" class="carousel slide" data-bs-ride="carousel">
