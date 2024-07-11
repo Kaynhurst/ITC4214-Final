@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'contact',
     'products',
     'forum',
+    'members',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

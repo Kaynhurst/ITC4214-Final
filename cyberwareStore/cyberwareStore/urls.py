@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('home.urls') , name = "homePage"),
     path('',include('products.urls') , name="productsPage"),
     path('',include('contact.urls') , name= "contactPage"),
-    path('',include('forum.urls') , name="forumPage")
+    path('',include('forum.urls') , name="forumPage"),
+    path('',include('members.urls') , name="members")
 ]
