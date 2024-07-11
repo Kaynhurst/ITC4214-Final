@@ -1,0 +1,39 @@
+  body {
+    font-family: Arial, sans-serif;
+
+    padding-left: 19%;
+    margin: 0 20%; 
+
+    width: 100%;
+    max-width: 1200px; 
+    height:100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #fff;
+    overflow: hidden;
+}
+
+
+
+.navigationbar{
+   background-color: rgb(255, 255, 4);
+    text-align: center;
+    margin-top: 10px;
+    width: 1500px;
+    height: 85px;
+    
+}
+
+.navbar .navbar-brand{
+    margin: 0 50px;
+
+}
+
+.navigationbar .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px ;
+}
