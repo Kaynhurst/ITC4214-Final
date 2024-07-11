@@ -4,12 +4,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="..\static\css\home_styles.css">
+        <link rel="stylesheet" href="..\static\css\base.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    
-    
-    <body class="layout">
+        
+        {% block extra_css %}
+        {% endblock %}
+
+        <title>{% block title%}Cyberware Store{% endblock %}</title>
+    </head>
+    <body>
 
         <div class="navigationbar position-relative">
             <div class="logo bg-danger position-absolute top-25 start-0">
@@ -18,16 +22,16 @@
 
             <!--Navigation Menu Buttons-->
             <nav class="navbar navbar-light d-inline-block align-top ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'home:index' %}">
                     <button type="button" class="btn btn-primary btn-lg">Home</button>
                 </a>
-                <a class="navbar-brand" href="#">                    
+                <a class="navbar-brand" href="{% url 'products:index' %}">                    
                     <button type="button" class="btn btn-primary btn-lg">Products</button>
                 </a>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'forum:index' %}">
                     <button type="button" class="btn btn-primary btn-lg">Forum</button>
                 </a>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'contact:index' %}">
                     <button type="button" class="btn btn-primary btn-lg">Contact</button>
                 </a>
             </nav>
@@ -43,10 +47,10 @@
             </div>
             
         </div>
-
-        
-        {% block body %}
-        {% endblock %}
+        <main class="main">
+            {% block content %}
+            {% endblock %}
+        </main>
 
         <div class="grid-item footer">
             Footer
