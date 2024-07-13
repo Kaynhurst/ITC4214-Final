@@ -1,0 +1,42 @@
+  html, .main , body{
+
+    align-items: center;
+    display: flex; 
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
+
+.navigationbar{
+
+  background-color: rgb(4, 255, 192);
+
+  text-align: center;
+  align-items: start;
+  position : sticky ;
+  
+  width: 97%;
+  height: 85px;
+  padding-bottom: 6%;
+  margin-bottom: 5%;
+
+}
+
+.navbar .navbar-brand{
+
+  padding : 0 100px ;
+
+}
+
+#logo{
+
+  background-color: chartreuse;
+  border: 3px;
+  border-radius: 15px;
+
+}

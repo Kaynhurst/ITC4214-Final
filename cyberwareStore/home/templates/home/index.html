@@ -1,17 +1,21 @@
-{% extends "home\layout.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%} Cyberware Store {% endblock %}
+
+<!--CSS for future implementation -->
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
 
 
-{% block body %}
+{% block content %}
 
-<div class="d-grid gap-25">
-    <div class="searchbar grid-item">
-        <input type="text" placeholder="Search...">
-    </div>
 
-    <div class="grid-item carousel mb-5">
+    <div class="carousel">
         <!-- Featured Random Items Carousel -->
-        <h3>Featured Items</h3>
         <div id="featuredItems" class="carousel slide" data-bs-ride="carousel">
 
             <ol class="carousel-indicators d-none">
@@ -25,19 +29,19 @@
             <!-- Featured Items -->
             <div class="carousel-inner d-flex justify-contents">
                 <div class="carousel-item active">
-                    <img src="..\static\images\placeholder_item.png" alt="">
+                    <img src="{%static 'images/placeholder_item.png'%}" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\static\images\placeholder_item.png" alt="">
+                    <img src="{%static 'images/placeholder_item.png'%}" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\static\images\placeholder_item.png" alt="">
+                    <img src="{%static 'images/placeholder_item.png'%}" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\static\images\placeholder_item.png" alt="">
+                    <img src="{%static 'images/placeholder_item.png'%}" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\static\images\placeholder_item.png" alt="">
+                    <img src="{%static 'images/placeholder_item.png'%}" alt="">
                 </div>
             </div>
 
@@ -51,14 +55,18 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+        </div>
 
-    <div class="grid-item quicklinks">
+        <div class="quicklinks">
         <button class="btn btn-lg px-4 mx-2"><i class="bi bi-search"></i></button>
         <button class="btn btn-lg px-4 mx-2"><i class="bi bi-search"></i></button>
         <button class="btn bbtn-lg px-4 mx-2"><i class="bi bi-search"></i></button>
+        </div>
+
     </div>
 
-</div>
+    <h1>Test Header</h1>
+    <p>Test Paragraph</p>
+
 
 {% endblock %}
