@@ -1,39 +1,42 @@
-  body {
-    font-family: Arial, sans-serif;
+  html, .main , body{
 
-    padding-left: 19%;
-    margin: 0 20%; 
-
-    width: 100%;
-    max-width: 1200px; 
-    height:100%;
-
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    
-    background-color: #fff;
-    overflow: hidden;
-}
+    display: flex; 
+    flex-direction: column;
 
+    height: 100%;
+    width: 100%;
 
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+
+  }
 
 .navigationbar{
-   background-color: rgb(255, 255, 4);
-    text-align: center;
-    margin-top: 10px;
-    width: 1500px;
-    height: 85px;
-    
+
+  background-color: rgb(4, 255, 192);
+
+  text-align: center;
+  align-items: start;
+  position : sticky ;
+  
+  width: 97%;
+  height: 85px;
+  padding-bottom: 6%;
+  margin-bottom: 5%;
+
 }
 
 .navbar .navbar-brand{
-    margin: 0 50px;
+
+  padding : 0 100px ;
 
 }
 
-.navigationbar .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 20px ;
+#logo{
+
+  background-color: chartreuse;
+  border: 3px;
+  border-radius: 15px;
+
 }
