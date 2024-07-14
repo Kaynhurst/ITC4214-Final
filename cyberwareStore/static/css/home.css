@@ -1,11 +1,28 @@
 body {
-  background-color: rgb(139, 127, 114);
+  background-color: rgb(164, 186, 215);
 
   font-family: 'Times New Roman', Times, serif;
   
   height : 100% ;
   width : 100%;
   
+}
 
+#featuredItems {
+  position: relative;
+  margin-top : 5% ;
+  margin-bottom : 5%;
+}
 
+#featuredItems .carousel-indicators {
+  position : absolute ;
+  bottom : -50px;
+  z-index: 10;
+}
+
+#featuredItems .carousel-item img {
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+  height : 200px;
 }
