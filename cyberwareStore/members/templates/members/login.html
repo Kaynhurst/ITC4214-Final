@@ -1,0 +1,45 @@
+{% extends 'members\base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link href="{% static 'css/login.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<h1>User Login</h1>
+
+<div id = "userForm" class="p-3 bg-info bg-opacity-10 border border-info rounded">
+
+    <form action = "{% url 'members:login' %}" method="post">
+        {% csrf_token %}
+
+        {{form}}
+        <label id = "wrongCreds" class="d-none"> Incorrect Username or password.</label>
+        <div class="fs-6 text-primary mb-3">
+
+            <a href = "{% url 'members:register' %}" style="text-decoration:none"> No account ? Register here.<br></a>
+            <a href = "#" onclick="alert('Try Remembering it.')" style="text-decoration:none">Forgot Password.</a>
+        </div>
+        <button type="submit" class="btn btn-danger">Log in</button>
+        
+    </form>
+</div>
+
+{% if show_alert %}
+<script>
+    alert('Username: {{ username }}\nPassword: {{ password }}');
+</script>
+
+{% endif %}
+
+{% if invalid %}
+
+<script>
+    $('#wrongCreds').removeClass();
+    $('#wrongCreds').addClass("form-label fs-6 text-danger");
+</script>
+{% endif %}
+
+{% endblock %}

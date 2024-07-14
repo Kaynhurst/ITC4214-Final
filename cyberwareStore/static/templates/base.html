@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/base.css'%}">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        
+        {% block extra_css %}
+        {% endblock %}
+
+        <title>{% block title%}Cyberware Store{% endblock %}</title>
+    </head>
+    <body>
+
+        <div class="navigationbar position-relative">
+            <div class="logo bg-danger position-absolute top-25 start-0">
+                <img src="..\static\images\placeholder_general.png" width="90" height="90" alt="logo">
+            </div>
+
+            <!--Navigation Menu Buttons-->
+            <nav class="navbar navbar-expand d-inline-block align-top">
+                <a class="navbar-brand" href="{% url 'home:index' %}">
+                    <button type="button" class="btn btn-primary btn-lg">Home</button>
+                </a>
+                <a class="navbar-brand" href="{% url 'products:index' %}">                    
+                    <button type="button" class="btn btn-primary btn-lg">Products</button>
+                </a>
+                <a class="navbar-brand" href="{% url 'forum:index' %}">
+                    <button type="button" class="btn btn-primary btn-lg">Forum</button>
+                </a>
+                <a class="navbar-brand" href="{% url 'contact:index' %}">
+                    <button type="button" class="btn btn-primary btn-lg">Contact</button>
+                </a>
+            </nav>
+
+            <!--User Login-->
+            <div id="logo" class="logo position-absolute top-0 end-0">
+                <a href="{% url 'members:login'%}">
+                    <button type="button" class="btn btn-sm">Login <i class="bi bi-person-circle"></i></button>
+                </a>
+            </div>
+
+            <!--Shopping Cart-->
+            <div id="logo" class="position-absolute bottom-0 end-0">
+                <a href = "{% url 'products:cart' %}">
+                    <button type="button" class="btn">Cart <i class="bi bi-cart"></i></button>
+                </a>
+            </div>
+
+            <!--Search Bar-->
+            <div  class="position-relative start-50 d-flex translate-middle px-5 py-5 w-75 my-5">
+                <input class="form-control" type="search" placeholder="Quick Search" aria-label="Search">
+
+                <button id="logo" type="button" class="btn position-relative mx-3 px-2 w-0">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            
+
+        </div>
+       
+        <main class="main">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+
+        <footer class="grid-item">
+            Contact information
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>
+
