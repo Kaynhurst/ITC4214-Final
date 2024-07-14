@@ -1,0 +1,14 @@
+{% extends 'members/base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link href="{% static 'css/profile.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <h1 class=" mt-5"> Hello {{name}} </h1>
+
+
+{% endblock %}
