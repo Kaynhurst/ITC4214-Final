@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 
 {% block title%} Products {% endblock %}
-{% block body %}
 
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div  id = "content" class="grid-container">
+    <div class="item1" id="sorting">
+        Sorting options
+    </div>
+
+    <div class="item2" id ="items">
+        Items
+    </div>
+
+</div>
 {% endblock %}
