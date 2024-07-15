@@ -16,12 +16,16 @@
         {% csrf_token %}
 
         {{form}}
+        <!-- Invalid username or password alert -->
         <label id = "wrongCreds" class="d-none"> Incorrect Username or password.</label>
+
+        <!-- User registration -->
         <div class="fs-6 text-primary mb-3">
 
             <a href = "{% url 'members:register' %}" style="text-decoration:none"> No account ? Register here.<br></a>
             <a href = "#" onclick="alert('Try Remembering it.')" style="text-decoration:none">Forgot Password.</a>
         </div>
+
         <button type="submit" class="btn btn-danger">Log in</button>
         
     </form>
