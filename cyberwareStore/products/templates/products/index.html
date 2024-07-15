@@ -2,30 +2,62 @@
 
 {% block title%} Products {% endblock %}
 
+
+<!--Page specific CSS -->
+
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-
-<div  id = "content" class="grid-container">
-    <div class="item1" id="sorting">
-        Sorting options
-    </div>
-
-    <div class="item2" id ="items">
-        Items
-    </div>
-
-</div>
-=======
 <body>
-    <div id="main" class="grid-container">
+    <div id="main" class="grid-container"> 
+
         <div class="itemSort">
-            Sorting System
+            <p class="sortHeader">Customize your experience !</p>
+
+            <form class="sortMain">
+
+                <!-- Type of product Radio Buttons -->
+                <div class="border border-rounded mn-3">
+                <input type="radio" id = "meds" name="productType" value="Medicine">
+                    <label for="meds">Medicine</label><br>
+                <input type="radio" id = "cybernetics" name="productType" value="Cybernetics">
+                    <label for="cybernetics">Cybernetics</label><br>
+                <input type="radio" id = "organics" name="productType" value="Organics">
+                    <label for="organics">Organics</label><br>
+                <input type="radio" id = "network" name="productType" value="Networking">
+                    <label for="network">Networking</label><br>
+                <input type="radio" id = "service" name="productType" value="Services">
+                    <label for="service">Services</label><br>
+                </div>
+
+                <!-- Price Range Buttons -->
+                <div class="border border-rounded mn-3">
+                    <label class="pt-1" for="priceRangeMax">Max Price.</label><br>
+                <input type="range" min="1" max="100" value="50" class="slider" id="priceRangeMax"><br>
+                    <label for="priceRangeMin">Min Price.</label><br>
+                <input type="range" min="1" max="100" value="50" class="slider" id="priceRangeMin">
+                </div>
+
+                <!-- Product Grade Type -->
+                <div class="border border-rounded">
+                    <input type="checkbox" id="military" name ="military" value="Military">
+                        <label for="military">Military Grade</label><br>
+                    <input type="checkbox" id="professional" name ="professional" value="Professional">
+                        <label for="professional">Professional Grade</label><br>
+                    <input type="checkbox" id="normal" name ="normal" value="Normal">
+                        <label for="normal">Normal Grade</label><br>
+                    <input type="checkbox" id="used" name ="used" value="Used">
+                        <label for="used">Used Grade</label><br>
+                </div>
+
+                <input class="btn btn-primary" type="submit" value="Submit" onclick="alert('Hello')">
+            </form>
+
         </div>
+
         <div class="products">
             Products    
             <div id = "itemLayout" class="grid-container">
@@ -54,5 +86,4 @@
         </div>
     </div>
 </body>
->>>>>>> homeBranch
 {% endblock %}
