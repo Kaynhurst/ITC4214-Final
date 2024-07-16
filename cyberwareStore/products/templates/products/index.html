@@ -13,7 +13,6 @@
 {% block content %}
 <body>
     <div id="main" class="grid-container"> 
-
         <div class="itemSort">
             <p class="sortHeader">Customize your experience !</p>
 
@@ -34,7 +33,7 @@
                 </div>
 
                 <!-- Price Range Buttons -->
-                <div class="border border-rounded mn-3">
+                <div class="border border-rounded mt-3">
                     <label class="pt-1" for="priceRangeMax">Max Price.</label><br>
                 <input type="range" min="1" max="100" value="50" class="slider" id="priceRangeMax"><br>
                     <label for="priceRangeMin">Min Price.</label><br>
@@ -42,7 +41,7 @@
                 </div>
 
                 <!-- Product Grade Type -->
-                <div class="border border-rounded">
+                <div class="border border-rounded mt-3">
                     <input type="checkbox" id="military" name ="military" value="Military">
                         <label for="military">Military Grade</label><br>
                     <input type="checkbox" id="professional" name ="professional" value="Professional">
@@ -53,11 +52,9 @@
                         <label for="used">Used Grade</label><br>
                 </div>
 
-                <input class="btn btn-primary" type="submit" value="Submit" onclick="alert('Hello')">
+                <input class="btn btn-primary mt-3" type="submit" value="Submit" onclick="alert('Hello')">
             </form>
-
         </div>
-
         <div class="products">
             Products    
             <div id = "itemLayout" class="grid-container">
