@@ -1,20 +1,20 @@
 #main {
     display: grid;
     grid-template-columns: 1fr 3fr; 
-    gap: 15vw;
+    gap: 8vw;
 }
 
 .itemSort {
     border: 1px solid #c6579b; 
-    padding: 20px;
     background-color: rgb(162, 255, 112,0.5);
 }
 
 .products {
     border: 1px solid #a2ff70; 
-    padding: 20px; 
-    font-size: 2vw ;
+    padding: 5px; 
+
     background-color: rgb(100, 149, 237,0.5);
+    width: 65vw;
 }
 
 .grid-container {
@@ -23,12 +23,23 @@
 
 .grid-item {
     border: 1px solid #ff4444; 
-    padding: 10px; 
+    background-color: #a2ff70;
+    /*padding: 10px; */
+    align-items: center;
+    text-align: bottom;
+    width : 20vw ;
+    height : 20vh ;
+}
+
+#productImage{
+    width : 75%;
+    height : 75% ;
 }
 
 #itemLayout{
     text-align: center;
     display : grid ;
     grid-template-columns: auto auto auto;
-    gap: 10px;
+    gap: 5px;
+    margin-right: 5%;
 }

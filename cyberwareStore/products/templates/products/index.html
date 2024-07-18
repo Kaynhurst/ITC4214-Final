@@ -20,17 +20,15 @@
 
                 <!-- Type of product Radio Buttons -->
                 <div class="border border-rounded mn-3">
-                <input type="radio" id = "meds" name="productType" value="Medicine">
-                    <label for="meds">Medicine</label><br>
-                <input type="radio" id = "cybernetics" name="productType" value="Cybernetics">
-                    <label for="cybernetics">Cybernetics</label><br>
-                <input type="radio" id = "organics" name="productType" value="Organics">
-                    <label for="organics">Organics</label><br>
-                <input type="radio" id = "network" name="productType" value="Networking">
-                    <label for="network">Networking</label><br>
-                <input type="radio" id = "service" name="productType" value="Services">
-                    <label for="service">Services</label><br>
+                    <p>Item Category<br></p>
+
+                    {% for category in categoryList%}
+                        <input type="radio" id = {{category.categoryName}} name="category" value={{category.categoryName}}>
+                        <label for={{category.categoryName}}>{{category.categoryName}}</label><br>
+                    {% endfor %}
+
                 </div>
+                    
 
                 <!-- Price Range Buttons -->
                 <div class="border border-rounded mt-3">
@@ -41,45 +39,35 @@
                 </div>
 
                 <!-- Product Grade Type -->
-                <div class="border border-rounded mt-3">
-                    <input type="checkbox" id="military" name ="military" value="Military">
-                        <label for="military">Military Grade</label><br>
-                    <input type="checkbox" id="professional" name ="professional" value="Professional">
-                        <label for="professional">Professional Grade</label><br>
-                    <input type="checkbox" id="normal" name ="normal" value="Normal">
-                        <label for="normal">Normal Grade</label><br>
-                    <input type="checkbox" id="used" name ="used" value="Used">
-                        <label for="used">Used Grade</label><br>
+                <div class="border border-rounded mt-3 d-block">
+                    <p>Item Grade<br></p>
+
+                        {% for grade in gradeList %}
+                            <input type="checkbox" id ={{grade.gradeName}} name ={{grade.gradeName}} value = {{grade.gradeName}}>
+                            <label for={{grade.gradeName}}>{{grade.gradeName}}</label><br>
+                        {% endfor %}
+
                 </div>
 
                 <input class="btn btn-primary mt-3" type="submit" value="Submit" onclick="alert('Hello')">
             </form>
         </div>
         <div class="products">
-            Products    
+            <p>Products</p>    
             <div id = "itemLayout" class="grid-container">
-                <div class="grid-item">
-                    1
-                </div>
-                <div class="grid-item">
-                    2
-                </div>
-                <div class="grid-item">
-                    3
-                </div>
-                <div class="grid-item">
-                    4
-                </div>
-                <div class="grid-item">
-                    5
-                </div>
-                <div class="grid-item">
-                    6
-                </div>
-                <div class="grid-item">
-                    7
-                </div>
-            </div>    
+
+                {%  for item in productsList %}
+                    <div class="grid-item">
+                        <button type="button" class="btn d-block" onclick="alert('{{item.productName}}')">
+                            <img id="productImage" src="{%static '{{item.productImage}}'%}" alt="">
+                            <br>
+                            <label for="productImage">{{item.productName}}</label>
+                        </button>
+                    </div>
+
+                {% endfor %}
+
+            </div>
         </div>
     </div>
 </body>
