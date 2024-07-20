@@ -12,7 +12,7 @@
 
 {% block content %}
 <body>
-    <div id="main" class="grid-container"> 
+    <div id="mainGrid" class="grid-container"> 
         <div class="itemSort">
             <p class="sortHeader">Customize your experience !</p>
 
@@ -57,12 +57,19 @@
             <div id = "itemLayout" class="grid-container">
 
                 {%  for item in productsList %}
-                    <div class="grid-item">
-                        <button type="button" class="btn d-block" onclick="alert('{{item.productName}}')">
-                            <img id="productImage" src="{%static '{{item.productImage}}'%}" alt="">
-                            <br>
-                            <label for="productImage">{{item.productName}}</label>
-                        </button>
+                    <div class="grid-item text-wrap" type="submit" onclick="alert('{{item.productName}}')">
+                        <form action="{% url 'products:add_product'%}" method="request">
+                            {% csrf_token %}
+                            
+                                <img id="images" src=../{{item.productImage}} alt="">
+                                <br>
+                                <div id="productDescription" for="images">
+                                    {{item.productName}}<br>
+                                    {{item.productPrice}} <span class="fw-bold">$</span><br>
+                                    {{item.productGrade.gradeName}}
+                                    {{item.productCategory.categoryName}}
+                                </div>
+                        </form>
                     </div>
 
                 {% endfor %}

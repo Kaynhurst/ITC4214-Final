@@ -4,52 +4,58 @@ html, main , body{
   display: flex; 
   flex-direction: column;
 
-  height: 100vmin 100vmax;
-  width: 100vmin 100vmax;
+  height: 65vmax;
+  width: 85vmax;
 
-  font-size: large;
-  font-size: 100% ;
-  font-family: 'Times New Roman', Times, serif;
-  padding-right: 1vw;
-  padding-left: 1vw;
+  margin-left: 6vmax;
 
 }
 
 .navigationbar{
 
-  background-color: rgb(255, 176, 4);
+  background-color: rgb(4, 255, 192);
 
   text-align: center;
   align-items: start;
   position : sticky ;
   
   width: 100%;
-  height:85px;
+  height: 9vh;
   margin-bottom:5%;
+
+ z-index: 6;
 }
 
 .navbar .navbar-brand{
-
-  padding : 0 100px ;
+  margin-left: 5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 
 }
 
 #logo{
 
   background-color: chartreuse;
+  font-size: 2vh;
   border: 3px;
   border-radius: 15px;
+  width: 5%;
+  height :40%;
 
+}
+
+#searchBar {
+  width : 85%;
 }
 
 footer {
   background-color: rgb(59, 49, 70);
   color :antiquewhite; 
 
-  width: 100%;
+  width:100vw;
 
-  margin-top : 5%;
-  padding: 5px;
+  margin-top : 15%;
+
 
   text-align: center;
   position:relative ;

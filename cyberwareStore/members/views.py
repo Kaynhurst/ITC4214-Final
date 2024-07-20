@@ -47,4 +47,4 @@ def register(request):
     return render(request,'members/registration.html',{"form" : UserRegister})
 
 def profile(request,name):
-    return render(request,'members/profile.html',{'name':name})
+    return render(request,'members/profile.html',{'username':name})

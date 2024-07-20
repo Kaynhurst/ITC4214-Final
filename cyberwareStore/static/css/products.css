@@ -1,12 +1,22 @@
-#main {
-    display: grid;
-    grid-template-columns: 1fr 3fr; 
-    gap: 8vw;
+body{
+    background-color: burlywood;    
 }
 
-.itemSort {
+#mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    gap: 2.5vw;
+    font-size: 1vw;
+    margin-right:4vmax ;
+}
+
+.itemSort ,#sortMain {
     border: 1px solid #c6579b; 
     background-color: rgb(162, 255, 112,0.5);
+    height: 70vh;
+    width: 15vw;
+
+    overflow : auto ;
 }
 
 .products {
@@ -22,24 +32,39 @@
 }
 
 .grid-item {
-    border: 1px solid #ff4444; 
-    background-color: #a2ff70;
-    /*padding: 10px; */
+    border: 1px solid #e77a7a;
+    border-radius: 25px; 
+
+    background-color: #707eff;
+   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+
+    overflow : hidden;
+
     align-items: center;
     text-align: bottom;
+
     width : 20vw ;
-    height : 20vh ;
+    height : 21vh ;
+    padding: 1vh;
 }
 
 #productImage{
-    width : 75%;
-    height : 75% ;
+    width : 35%;
+    height : 35% ;
 }
 
 #itemLayout{
     text-align: center;
     display : grid ;
     grid-template-columns: auto auto auto;
-    gap: 5px;
-    margin-right: 5%;
+    gap: 1vw;
+}
+
+#images{
+    width : 45% ;
+    height : 45% ;
+}
+#productDescription{
+    font-size: 85%;
+    
 }
