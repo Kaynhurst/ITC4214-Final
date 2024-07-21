@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from .models import *
 
@@ -10,9 +11,11 @@ def index(request):
 
     cart = CheckoutCart.objects.all()
     sum = cart.count()
+
     if productsList is not None :
         return render(request,'products/index.html',{'productsList':productsList , 'gradeList':gradeList, 'categoryList' : categoryList,'total' : sum})
-    
+    else:
+        return Http404("Something went wrong with database...")
 def cart(request):
 
     return render(request,'products/cart.html',)

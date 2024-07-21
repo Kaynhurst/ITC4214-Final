@@ -8,6 +8,7 @@
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
+
 {% endblock %}
 
 {% block content %}
@@ -49,7 +50,7 @@
 
                 </div>
 
-                <input class="btn btn-primary mt-3" type="submit" value="Submit" onclick="alert('Hello')">
+                <input id ="sortSubmit" class="btn btn-primary mt-3" type="submit" value="Submit" onclick="alert('Hello')">
             </form>
         </div>
         <div class="products">
@@ -57,7 +58,12 @@
             <div id = "itemLayout" class="grid-container">
 
                 {%  for item in productsList %}
-                    <div class="grid-item text-wrap" type="submit" onclick="alert('{{item.productName}}')">
+                    <div class="grid-item text-wrap product" type="submit"
+                        data-name = "{{item.productName}}"
+                        data-price = "{{item.productPrice}}"
+                        data-grade = "{{item.productGrade.gradeName}}"
+                        data-category = "{{item.productCategory.categoryName}}">
+
                         <form action="{% url 'products:add_product'%}" method="request">
                             {% csrf_token %}
                             
@@ -77,5 +83,7 @@
             </div>
         </div>
     </div>
+    <script src="{%static 'scripts/products.js'%}" defer></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </body>
 {% endblock %}

@@ -6,5 +6,5 @@ from forum import views
 app_name= 'forum'
 
 urlpatterns = [
-    path('forum' , views.index , name = "index")
+    path('forum/' , views.index , name = "index")
 ]

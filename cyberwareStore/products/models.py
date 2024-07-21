@@ -8,14 +8,14 @@ class Category (models.Model):
     categoryName = models.CharField(max_length=50)
     
     def __str__(self):
-        return (f"Category ID : {self.id} + Category Name : {self.categoryName}")
+        return (f"Category ID : {self.id} | Category Name : {self.categoryName}")
     
 
 class Grade (models.Model):
     gradeName = models.CharField(max_length=50)
 
     def __str__(self):
-        return (f"Grade ID : {self.id} \nGrade Name : {self.gradeName}")
+        return (f"Grade ID : {self.id} | Grade Name : {self.gradeName}")
     
 
 class Product(models.Model):

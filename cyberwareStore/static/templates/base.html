@@ -58,18 +58,18 @@
             <!-- User Login -->
             <div id="logo" class="logo position-absolute top-0 end-0">
                 <a href="{% url 'members:login'%}">
-                    <button type="button" class="btn btn-sm">Login <i class="bi bi-person-circle"></i></button>
+                    <button type="button" class="btn btn-sm overflow-hidden">Login <i class="bi bi-person-circle"></i></button>
                 </a>
             </div>
     
             <!-- Shopping Cart -->
             <div id="logo" class="position-absolute bottom-0 end-0">
-                <a href="{% url 'products:cart' %}">
-                    <button type="button" class="btn">
-                        Cart <i class="bi bi-cart"></i>
-                    </button>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">{{total}}</span>
-                </a>
+                    <a href="{% url 'products:cart' %}">
+                        <button type="button" class="btn">
+                            Cart <i class="bi bi-cart"></i>
+                        </button>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">{{total}}</span>
+                    </a>
             </div>
     
             <!-- Search Bar -->

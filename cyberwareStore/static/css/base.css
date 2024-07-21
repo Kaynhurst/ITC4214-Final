@@ -19,28 +19,30 @@ html, main , body{
   align-items: start;
   position : sticky ;
   
-  width: 100%;
+  width: 80vw;
   height: 9vh;
   margin-bottom:5%;
 
  z-index: 6;
+
+ margin-left: 5vw;
+ padding-left: 5vw;
+ padding-right: 5vw;
 }
 
 .navbar .navbar-brand{
-  margin-left: 5vw;
-  padding-left: 5vw;
-  padding-right: 5vw;
-
+  padding-left : 7vw;
 }
 
 #logo{
 
   background-color: chartreuse;
-  font-size: 2vh;
+  font-size: 1vw ;
   border: 3px;
   border-radius: 15px;
-  width: 5%;
-  height :40%;
+  width: 5.5vw;
+  height :4vh;
+  overflow: visible;
 
 }
 
