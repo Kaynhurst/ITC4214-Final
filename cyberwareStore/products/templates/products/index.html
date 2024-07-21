@@ -24,7 +24,7 @@
                     <p>Item Category<br></p>
 
                     {% for category in categoryList%}
-                        <input type="radio" id = {{category.categoryName}} name="category" value={{category.categoryName}}>
+                        <input type="radio" id = {{category.categoryName}} name="category" value={{category.categoryName}} class="categorySort">
                         <label for={{category.categoryName}}>{{category.categoryName}}</label><br>
                     {% endfor %}
 
@@ -33,10 +33,14 @@
 
                 <!-- Price Range Buttons -->
                 <div class="border border-rounded mt-3">
-                    <label class="pt-1" for="priceRangeMax">Max Price.</label><br>
-                <input type="range" min="1" max="100" value="50" class="slider" id="priceRangeMax"><br>
-                    <label for="priceRangeMin">Min Price.</label><br>
-                <input type="range" min="1" max="100" value="50" class="slider" id="priceRangeMin">
+                    <label class="pt-1" for="priceRangeMax">
+                        Max Price: <span id="maxPriceValue">50</span>
+                    </label><br>
+                    <input type="range" min="1" max="9999" value="50" class="slider" id="priceRangeMax"><br>
+                    <label for="priceRangeMin">
+                        Min Price: <span id="minPriceValue">50</span>
+                    </label><br>
+                    <input type="range" min="1" max="9999" value="50" class="slider" id="priceRangeMin">
                 </div>
 
                 <!-- Product Grade Type -->
@@ -44,13 +48,15 @@
                     <p>Item Grade<br></p>
 
                         {% for grade in gradeList %}
-                            <input type="checkbox" id ={{grade.gradeName}} name ={{grade.gradeName}} value = {{grade.gradeName}}>
+                            <input type="checkbox" id ={{grade.gradeName}} name ={{grade.gradeName}} value = {{grade.gradeName}} class="gradeSort">
                             <label for={{grade.gradeName}}>{{grade.gradeName}}</label><br>
                         {% endfor %}
 
                 </div>
-
-                <input id ="sortSubmit" class="btn btn-primary mt-3" type="submit" value="Submit" onclick="alert('Hello')">
+                <div class="d-inline-block mt-3">
+                    <input id ="sortSubmit" class="btn btn-primary" type="submit" value="Submit">
+                    <button type="button" id="reverseSubmit" class="btn btn-danger d-none">X</button>
+                </div>
             </form>
         </div>
         <div class="products">
