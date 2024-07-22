@@ -1,16 +1,81 @@
 $(document).ready(function(){
-    console.log("This is a test") ;
 
-    $(".product").click(function(){
+    // Product sorting System
+    $("#sortSubmit").click(function(event){
+        event.preventDefault();
+
+        //Show the reset submissions button
+        $("#reverseSubmit").removeClass();
+        $("#reverseSubmit").addClass("btn btn-danger");
+
+        $("#reverseSubmit").click(function(){
+            //Hide the Reverse sumbission button
+            $("#reverseSubmit").addClass("btn btn-danger d-none");
+
+            $(".product").each(function(){
+                $(this).css("display","grid") ;
+            });
+        });
+
+
+        //Get submission values
+        var radioButtonValue = $("input[name='category']:checked").val();
+        $("input[name='category']:checked").prop('checked', false) ; 
+
+        var checkBoxButtonValues = [] ;
+
+        $("input.gradeSort:checked").each(function(){
+            checkBoxButtonValues.push($(this).val());
+            $(this).prop('checked', false) ;
+        });
+
+        var priceMax = $("#maxPriceValue").val() ;
+        var priceMin = $("#minPriceValue").val() ;
+        $(".product").each(function(){
+   
+
+            //Clear previous submission
+            if($(this).css("display") === "none"){
+                $(this).css("display","grid") ;
+            };
+
+            //Radio Button Sorting
+            if(radioButtonValue != null && radioButtonValue !== '') {
+
+                if ($(this).data('category') != radioButtonValue) {
+                    $(this).css("display","none");
+                };
+            } ;
+
+            //Checkbox Button Sorting
+            if (checkBoxButtonValues.length  > 0){
+
+                if(!(checkBoxButtonValues.includes($(this).data('grade')))) {
+                    $(this).css("display","none");
+                };
+            };
+ 
+    
+        });
         
-        const name = $(this).data('name') ;
-        console.log("Product Name is " + " " + name) ;
-        if ($(this).data('grade') == 'Military') {
-            $(this).css("background-color","green");
-        }
-        else{
-            $(this).css("background-color","pink");
-        };
+    });
 
-    })
+    //Display Price Values
+    function updateSliderValue(slider, displayElement) {
+        $(displayElement).text($(slider).val());
+    }
+
+    // Initial display of the values
+    updateSliderValue('#priceRangeMax', '#maxPriceValue');
+    updateSliderValue('#priceRangeMin', '#minPriceValue');
+
+    $('#priceRangeMax').on('input', function() {
+        updateSliderValue(this, '#maxPriceValue');
+    });
+
+    $('#priceRangeMin').on('input', function() {
+        updateSliderValue(this, '#minPriceValue');
+    });
+
+    // Add Product to CheckoutCart Models
 })

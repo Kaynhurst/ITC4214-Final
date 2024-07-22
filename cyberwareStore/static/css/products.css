@@ -25,6 +25,7 @@ body{
 
     background-color: rgb(100, 149, 237,0.5);
     width: 65vw;
+    display:grid;
 }
 
 .grid-container {
