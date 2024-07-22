@@ -8,7 +8,6 @@
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
-
 {% endblock %}
 
 {% block content %}
@@ -78,13 +77,11 @@
                             {{item.productGrade.gradeName}}
                             {{item.productCategory.categoryName}}
                         </div>
+
                         <!-- Add item to cart -->
-                        <button type="submit" class="btn btn-success btn-sm d-flexbox position-absolute end-0 border-warnign-subtle rounded-pill z-3"> Add to cart
-                            <form action="{% url 'products:add_product'%}" method="request">
-                                {% csrf_token %}
-                            </form> 
+                        <button type="submit" class="btn btn-success btn-sm d-flexbox position-absolute end-0 border-warning-subtle rounded-pill z-3">
+                            <a class="text-decoration-none text-light" href="{% url 'products:add_product' item.id %}">Add to Cart</a>
                         </button>
-                        
                     </div>
 
                 {% endfor %}

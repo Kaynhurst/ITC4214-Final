@@ -14,7 +14,6 @@ def index(request):
     userLogin = True
     values = {
         'total' : sum,
-        'randomProducts' : randomProducts,
-        'userLogin' : userLogin 
+        'randomProducts' : randomProducts
     }
     return render(request,'home/index.html',values)

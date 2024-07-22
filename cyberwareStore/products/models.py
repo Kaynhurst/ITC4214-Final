@@ -31,6 +31,7 @@ class Product(models.Model):
 
 class CheckoutCart (models.Model):
     item = models.ForeignKey(Product,on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=0)
 
     def __str__(self):
         return (f"Product Name : {self.item.productName}\nProduct Price : {self.item.productPrice}")

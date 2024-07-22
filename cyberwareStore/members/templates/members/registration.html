@@ -11,7 +11,7 @@
 
 <div id = "userForm" class="p-3 bg-info bg-opacity-10 border border-info rounded">
 
-    <form method="POST">
+    <form action='' method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Signup</button>

@@ -9,7 +9,7 @@ def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            userName = form.cleaned_data['username']
+            userName = form.cleaned_data['userName']
             userPassword = form.cleaned_data['password']
             user = authenticate(request, username=userName, userPassword=userPassword)
             if user:
@@ -32,9 +32,12 @@ def register(request):
     return render(request,'members/registration.html',{"form" : form})
 
 def profile(request):
-    username = 'John'
-
-    return render(request,'members/profile.html',{'username':username})
+        
+    username = None
+    values ={
+        'username':username
+        }
+    return render(request,'members/profile.html',values)
 
 def user_logout(request):
     logout(request)

@@ -17,16 +17,15 @@
         <title>{% block title%}Cyberware Store{% endblock %}</title>
     </head>
     <body>
-        <div class="navigationbar position-relative">
+        <div class="navigationbar position-relative">            
             <!-- Logo -->
             <div class="logo bg-danger position-absolute top-50 start-0 translate-middle-y">
-                <img src="..\static\images\placeholder_general.png" width="90" height="90" alt="logo">
-            </div>
-        
+                <img src="{%static '/images/logo.png'%}" width="90" height="90" alt="logo">
+            </div>        
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg d-inline-block w-100">
 
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon "></span>
                 </button>
 
@@ -43,14 +42,14 @@
                                 <button type="button" class="btn btn-lg btn-dark">Products</button>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="{% url 'forum:index' %}">
-                                <button type="button" class="btn btn-lg btn-dark">Forum</button>
+                        <li class="nav-item">   <!--{% url 'forum:index' %}-->
+                            <a class="navbar-brand" href="">
+                                <button type="button" class="btn btn-lg btn-dark" disabled>Forum</button>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="{% url 'contact:index' %}">
-                                <button type="button" class="btn btn-lg btn-dark">Contact</button>
+                        <li class="nav-item">   <!--{% url 'contact:index' %}-->
+                            <a class="navbar-brand" href="#">
+                                <button type="button" class="btn btn-lg btn-dark" disabled>Contact</button>
                             </a>
                         </li>
 
@@ -81,12 +80,13 @@
                             </button>
                         </a>
                     </div>
-                    <!-- Search Bar -->
-                    <form class="d-flex search-bar">
-                        <input class="form-control me-2" type="search" placeholder="Quick Search" aria-label="Search">
-                        <button id="logoButton" type="button" class="btn btn-sm btn-dark"><i class="bi bi-search"></i></button>
+                    <!-- Search Product -->
+                    <form class="d-flex search-bar" action="{% url 'products:search' %}" method="GET">
+                        <input class="form-control me-2" type="text" name="search_product" placeholder="Quick Search" aria-label="Search">
+                        <button type="submit" id="logoButton" class="btn btn-sm btn-dark">
+                            <i class="bi bi-search"></i>
+                        </button>
                     </form>
-
                 </div>
             </nav>
         </div>
