@@ -59,12 +59,12 @@
                 </div>
             </form>
         </div>
-        <div class="products">
+        <div class="productsGrid">
             <p>Products</p>    
             <div id = "itemLayout" class="grid-container">
 
                 {%  for item in productsList %}
-                    <div class="grid-item text-wrap product" type="submit"
+                    <div class="grid-item text-wrap productItem position-relative z-0" type="submit"
                         data-name = "{{item.productName}}"
                         data-price = "{{item.productPrice}}"
                         data-grade = "{{item.productGrade.gradeName}}"
@@ -78,10 +78,13 @@
                             {{item.productGrade.gradeName}}
                             {{item.productCategory.categoryName}}
                         </div>
+                        <!-- Add item to cart -->
+                        <button type="submit" class="btn btn-success btn-sm d-flexbox position-absolute end-0 border-warnign-subtle rounded-pill z-3"> Add to cart
+                            <form action="{% url 'products:add_product'%}" method="request">
+                                {% csrf_token %}
+                            </form> 
+                        </button>
                         
-                        <form action="{% url 'products:add_product'%}" method="request">
-                            {% csrf_token %}
-                        </form>
                     </div>
 
                 {% endfor %}
