@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 
-{% block title%} Cyberware Store {% endblock %}
-
-<!--Page specific CSS -->
+{% block title %}Cyberware Store{% endblock %}
 
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
-
 
 {% block content %}
 
@@ -16,45 +13,39 @@
     <p>Test Paragraph</p>
 
     <!-- Featured Random Items Carousel -->
+
     <div id="featuredItems" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <div id="indicators" class="carousel slide">
-            <div class="carousel-indicators ">
-                <button type="button" data-bs-target="#indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#indicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#indicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div>
-
-            <!--Random Products -->
-            <div class="carousel-inner">
-
-                {%for product in randomProducts %}
-                <div class="{% if forloop.first %}carousel-item active{%else%}carousel-item{% endif %}" id="item{{forloop.counter0}}" data-bs-interval="2500">
-                    <img src="../{{product.productImage}}" alt="">
-                    <p>{{product.productName}}</p>
+        <!-- Random Products -->
+        <div class="carousel-inner">
+            {% for product in randomProducts %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="../{{product.productImage}}" alt="{{ product.productName }}" class="d-flex w-150">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ product.productName }}</h5>
                 </div>
-                {% endfor %}
-            </div>  
+            </div>
+            {% endfor %}
+        </div>
+    
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            {% for product in randomProducts %}
+            <button type="button" data-bs-target="#featuredItems" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter0 }}"></button>
+            {% endfor %}
         </div>
     </div>
 
     <!-- Quick Search Links for Products -->
     <div class="quicklinks mt-5">
-
         <button class="btn btn-lg px-4 mx-2">
             <i class="bi bi-search">Medication</i>
         </button>
-
         <button class="btn btn-lg px-4 mx-2">
-            <i class="bi bi-search">Networking</i>   
+            <i class="bi bi-search">Networking</i>
         </button>
-
         <button class="btn btn-lg px-4 mx-2">
             <i class="bi bi-search"></i>
         </button>
-
     </div>
 
     <h3>Introductory Paragraph</h3>

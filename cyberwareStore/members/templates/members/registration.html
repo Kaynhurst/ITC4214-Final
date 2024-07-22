@@ -11,14 +11,12 @@
 
 <div id = "userForm" class="p-3 bg-info bg-opacity-10 border border-info rounded">
 
-    <form action = "{% url 'members:login' %}" method="post">
+    <form method="POST">
         {% csrf_token %}
-
-        {{form}}
-
-        <button type="submit" class="btn btn-danger" onclick="alert('')">Complete Registration</button>
-        
+        {{ form.as_p }}
+        <button type="submit">Signup</button>
+        <a href="{% url 'members:login' %}">Already have account?</a>
     </form>
-</div>
 
+</div>
 {% endblock %}
