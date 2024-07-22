@@ -12,8 +12,8 @@ $(document).ready(function(){
             //Hide the Reverse sumbission button
             $("#reverseSubmit").addClass("btn btn-danger d-none");
 
-            $(".product").each(function(){
-                $(this).css("display","grid") ;
+            $(".productItem").each(function(){
+                $(this).css("display","block") ;
             });
         });
 
@@ -31,12 +31,12 @@ $(document).ready(function(){
 
         var priceMax = $("#maxPriceValue").val() ;
         var priceMin = $("#minPriceValue").val() ;
-        $(".product").each(function(){
-   
 
+        $(".productItem").each(function(){
+   
             //Clear previous submission
             if($(this).css("display") === "none"){
-                $(this).css("display","grid") ;
+                $(this).css("display","block") ;
             };
 
             //Radio Button Sorting

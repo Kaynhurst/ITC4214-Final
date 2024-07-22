@@ -17,50 +17,26 @@
 
     <!-- Featured Random Items Carousel -->
     <div id="featuredItems" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators -->
-            <div id="indicators" class="carousel slide">
-                <div class="carousel-indicators ">
-                  <button type="button" data-bs-target="#indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#indicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                  <button type="button" data-bs-target="#indicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                </div>
+        <!-- Indicators -->
+        <div id="indicators" class="carousel slide">
+            <div class="carousel-indicators ">
+                <button type="button" data-bs-target="#indicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#indicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#indicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
 
-            <!-- Featured Items -->
+            <!--Random Products -->
             <div class="carousel-inner">
 
-                <div class="carousel-item active" id="item1" data-bs-interval="2500" >
-                    <img src="{%static 'images/placeholder_item.png'%}" class="d-block w-100" alt="">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h3>Item 1</h3>
-                    </div>
+                {%for product in randomProducts %}
+                <div class="{% if forloop.first %}carousel-item active{%else%}carousel-item{% endif %}" id="item{{forloop.counter0}}" data-bs-interval="2500">
+                    <img src="../{{product.productImage}}" alt="">
+                    <p>{{product.productName}}</p>
                 </div>
-                <div class="carousel-item"  id="item2" data-bs-interval="2500">
-                    <img src="{%static 'images/placeholder_item.png'%}" class="d-block w-100" alt="">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h3>Item 2</h3>
-                    </div>
-                </div>
-                <div class="carousel-item"  id="item3" data-bs-interval="2500">
-                    <img src="{%static 'images/placeholder_item.png'%}" class="d-block w-100" alt="">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h3>Item 3</h3>
-                    </div>
-                </div>
-                <div class="carousel-item" id="item4" data-bs-interval="2500">
-                    <img src="{%static 'images/placeholder_item.png'%}" class="d-block w-100" alt="">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h3>Item 4</h3>
-                    </div>
-                </div>
-                <div class="carousel-item"  id="item5" data-bs-interval="2500">
-                    <img src="{%static 'images/placeholder_item.png'%}" class="d-block w-100" alt="">
-                    <div class="carousel-caption d-none d-md-block text-dark">
-                        <h3>Item 5</h3>
-                    </div>
-                </div>
-            </div>
+                {% endfor %}
+            </div>  
         </div>
     </div>
 
@@ -81,7 +57,6 @@
 
     </div>
 
-    <h3>Test Header</h3>
-    <p>Test Paragraph</p>
+    <h3>Introductory Paragraph</h3>
 
 {% endblock %}

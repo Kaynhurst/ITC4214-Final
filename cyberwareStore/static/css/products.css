@@ -16,16 +16,20 @@ body{
     height: 70vh;
     width: 15vw;
 
-    overflow : auto ;
 }
 
-.products {
+.productsGrid {
     border: 1px solid #a2ff70; 
     padding: 5px; 
 
     background-color: rgb(100, 149, 237,0.5);
     width: 65vw;
     display:grid;
+}
+
+.productItem {
+    font-size: 85%;
+    display : block;
 }
 
 .grid-container {
@@ -64,8 +68,4 @@ body{
 #images{
     width : 45% ;
     height : 45% ;
-}
-#productDescription{
-    font-size: 85%;
-    
 }
