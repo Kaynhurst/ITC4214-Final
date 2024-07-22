@@ -64,14 +64,14 @@
                         data-grade = "{{item.productGrade.gradeName}}"
                         data-category = "{{item.productCategory.categoryName}}">
 
-                                <img id="images" src=../{{item.productImage}} alt="">
-                                <br>
-                                <div id="productDescription" for="images">
-                                    {{item.productName}}<br>
-                                    {{item.productPrice}} <span class="fw-bold">$</span><br>
-                                    {{item.productGrade.gradeName}}
-                                    {{item.productCategory.categoryName}}
-                                </div>
+                        <img id="images" src=../{{item.productImage}} alt="">
+                        <br>
+                        <div id="productDescription" for="images">
+                            {{item.productName}}<br>
+                            {{item.productPrice}} <span class="fw-bold">$</span><br>
+                            {{item.productGrade.gradeName}}
+                            {{item.productCategory.categoryName}}
+                        </div>
                         
                         <form action="{% url 'products:add_product'%}" method="request">
                             {% csrf_token %}

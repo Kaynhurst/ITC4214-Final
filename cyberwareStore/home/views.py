@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from products.models import *
+import random
 
 # Create your views here.
 
