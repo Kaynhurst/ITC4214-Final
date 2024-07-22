@@ -5,9 +5,14 @@ from products.models import *
 
 def index(request):
     cart = CheckoutCart.objects.all()
+    productsList = Product.objects.all()
 
-    sum = 0
-    for item in cart :
-        sum += 1
+    #Give random Product Recomendations
+    randomProducts = random.sample(list(productsList), min(len(productsList), 5))
+    sum = cart.count()
 
-    return render(request,'home/index.html',{'total' : sum})
+    values = {
+        'total' : sum,
+        'randomProducts' : randomProducts
+    }
+    return render(request,'home/index.html',values)

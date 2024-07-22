@@ -64,9 +64,6 @@
                         data-grade = "{{item.productGrade.gradeName}}"
                         data-category = "{{item.productCategory.categoryName}}">
 
-                        <form action="{% url 'products:add_product'%}" method="request">
-                            {% csrf_token %}
-                            
                                 <img id="images" src=../{{item.productImage}} alt="">
                                 <br>
                                 <div id="productDescription" for="images">
@@ -75,6 +72,9 @@
                                     {{item.productGrade.gradeName}}
                                     {{item.productCategory.categoryName}}
                                 </div>
+                        
+                        <form action="{% url 'products:add_product'%}" method="request">
+                            {% csrf_token %}
                         </form>
                     </div>
 
