@@ -11,9 +11,10 @@ def index(request):
     #Give random Product Recomendations
     randomProducts = random.sample(list(productsList), min(len(productsList), 5))
     sum = cart.count()
-
+    userLogin = False
     values = {
         'total' : sum,
-        'randomProducts' : randomProducts
+        'randomProducts' : randomProducts,
+        'userLogin' : userLogin 
     }
     return render(request,'home/index.html',values)

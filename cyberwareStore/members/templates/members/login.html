@@ -30,11 +30,8 @@
         
     </form>
 
-    <!-- Redirect user to profile Code -->
-    {% with user_name="John" %}
-    <button type="submit" class="btn btn-danger"><a class="text-decoration-none" href="{% url 'members:profile' name=user_name %}">Profile</a> </button>
-    {% endwith %}
-    
+    <!-- Redirect user to profile -->
+    <button type="submit" class="btn btn-danger"><a class="text-decoration-none" href="{% url 'members:profile'%}">Profile</a> </button>
 </div>
 
 {% if show_alert %}

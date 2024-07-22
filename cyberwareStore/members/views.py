@@ -28,13 +28,15 @@ def login(request):
             password = form.cleaned_data.get('password')
             user = authenticate(request, userMail=userMail, password=password)
             
-            return render(request, 'members/login.html', {
+            values = {
                     'form': form,
                     'username': userMail,
                     'password': password,
                     'show_alert': True,
                     'invalid' : False
-                })
+                }
+            
+            return render(request, 'members/login.html', values )
         else:
               messages.error(request, 'Invalid username or password.')
               
@@ -46,5 +48,7 @@ def register(request):
     
     return render(request,'members/registration.html',{"form" : UserRegister})
 
-def profile(request,name):
-    return render(request,'members/profile.html',{'username':name})
+def profile(request):
+    username = 'John'
+
+    return render(request,'members/profile.html',{'username':username})
