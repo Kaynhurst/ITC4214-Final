@@ -19,18 +19,17 @@
     <body>
         <div class="navigationbar position-relative">
             <!-- Logo -->
-            <div class="logo bg-danger position-absolute top-25 start-0">
+            <div class="logo bg-danger position-absolute top-50 start-0 translate-middle-y">
                 <img src="..\static\images\placeholder_general.png" width="90" height="90" alt="logo">
             </div>
-    
+        
             <!-- Navigation Menu Buttons -->
-            <nav class="navbar navbar-expand-lg d-flex">
+            <nav class="navbar navbar-expand-lg d-flex w-100">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="navbar-brand" href="{% url 'home:index' %}">
                                 <button type="button" class="btn btn-primary btn-lg">Home</button>
@@ -52,43 +51,32 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <!-- User Login -->
+                            <a href="{% url 'members:login'%}">
+                                <button type="button" class="btn btn-sm btn-login">Login <i class="bi bi-person-circle"></i></button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Shopping Cart -->
+                            <a href="{% url 'products:cart' %}">
+                                <button type="button" class="btn btn-cart pt-2">
+                                    Cart <i class="bi bi-cart"></i>
+                                </button>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">{{total}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Search Bar -->
+                    <form class="d-flex search-bar">
+                        <input class="form-control me-2" type="search" placeholder="Quick Search" aria-label="Search">
+                        <button type="button" class="btn btn-outline-success"><i class="bi bi-search"></i></button>
+                    </form>
                 </div>
             </nav>
-            {% if userLogin %}
-            <!-- User Profile -->
-            <div id="logo" class="logo position-absolute top-0 end-0">
-                <a href="{% url 'members:profile'%}">
-                    <button type="button" class="btn btn-sm overflow-hidden">Profile <i class="bi bi-person-circle"></i></button>
-                </a>
-            </div>
-            {% else %}
-            <!-- User Login -->
-            <div id="logo" class="logo position-absolute top-0 end-0">
-                <a href="{% url 'members:login'%}">
-                    <button type="button" class="btn btn-sm overflow-hidden">Login <i class="bi bi-person-circle"></i></button>
-                </a>
-            </div>
-            {% endif %}
-    
-            <!-- Shopping Cart -->
-            <div id="logo" class="position-absolute bottom-0 end-0">
-                    <a href="{% url 'products:cart' %}">
-                        <button type="button" class="btn">
-                            Cart <i class="bi bi-cart"></i>
-                        </button>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">{{total}}</span>
-                    </a>
-            </div>
-    
-            <!-- Search Bar -->
-            <div id="searchBar" class="position-relative start-50 d-flex translate-middle px-5 py-5 my-5">
-                <input class="form-control" type="search" placeholder="Quick Search" aria-label="Search">
-                <button id="logo" type="button" class="btn position-relative mx-3 px-2 w-0">
-                    <i class="bi bi-search"></i>
-                </button>
-            </div>
         </div>
-       
+        </div>
         <main>
             {% block content %}
             {% endblock %}
