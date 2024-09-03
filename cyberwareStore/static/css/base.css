@@ -129,3 +129,8 @@ a:hover {
     color: #ff00cc; /* Neon pink color on hover */
     text-shadow: 0 0 10px #ff00cc; /* Stronger glow effect on hover */
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Adjusts the dropdown to appear immediately */
+}

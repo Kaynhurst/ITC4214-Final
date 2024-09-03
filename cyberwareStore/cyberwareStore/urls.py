@@ -24,5 +24,8 @@ urlpatterns = [
     path('',include('products.urls') , name="productsPage"),
     path('',include('contact.urls') , name= "contactPage"),
     path('',include('forum.urls') , name="forumPage"),
-    path('',include('members.urls') , name="members")
+    path('accounts/',include('accounts.urls')),
+    path('accounts/',include('django.contrib.auth.urls') , name="accounts"),
+    
+
 ]

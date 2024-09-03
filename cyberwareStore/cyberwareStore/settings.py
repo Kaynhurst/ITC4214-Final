@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'contact',
     'products',
     'forum',
-    'members',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,6 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'cyberwareStore.wsgi.application'
+
 
 
 # Database
@@ -135,3 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [BASE_DIR / 'static'
                         
                     ]
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

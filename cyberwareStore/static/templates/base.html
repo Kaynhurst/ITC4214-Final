@@ -56,17 +56,22 @@
 
                     </ul>
                                     
-                    {% if userLogin %}
+                    {% if user.is_authenticated %}
                         <div class="nav-item">
                             <!-- User Profile -->
-                            <a href="{% url 'members:profile'%}">
+                            <a href="{% url 'accounts:profile' %}">
                                 <button id="logoButton" type="button" class="btn btn-dark">Profile <i class="bi bi-person-rolodex position-absolute"></i></button>
                             </a>
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button class="btn mt-1 btn-dark" type="submit">Log Out</button>
+                            </form>
                         </div>
+
                     {% else %}
                         <div class="nav-item">
                             <!-- User Login -->
-                            <a href="{% url 'members:login'%}">
+                            <a href="{% url 'login'%}">
                                 <button id="logoButton" type="button" class="btn btn-dark">Login <i class="bi bi-person-circle position-absolute"></i></button>
                             </a>
                         </div>
