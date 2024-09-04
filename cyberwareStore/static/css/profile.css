@@ -1,131 +1,171 @@
-/* Importing Orbitron font for a futuristic look */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
 /* General Body Styling */
-html, body {
+body {
+    background-color: #0f0f0f; 
+    color: #0ff; 
+    font-family: 'Orbitron', sans-serif;
+    overflow: scroll;
+}
+
+/* Admin Panel Styling */
+h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: #0ff;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+    color: #0ff;
+}
+
+/* Grid Container for Products */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1em;
+    margin: 0 auto;
+    max-width: 75vw;
+    padding: 1em;
+}
+
+/* Product Item Styling */
+.grid-item {
+    border: 1px solid #e77a7a;
+    border-radius: 25px;
+    background-color: #707eff;
+    overflow: hidden;
+    text-align: center;
+    padding: 1em;
+    color: #0ff;
+    box-shadow: 0 0 10px #0ff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; /* Adjusted to distribute space */
+    min-height: 200px; /* Increased height */
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Product Description Styling */
+#productDescription {
+    margin-bottom: 1em; /* Adjusted for better spacing */
+    z-index: 1;
+    height: auto;
+    font-size: 1em;
+}
+
+/* Edit Product Button Styling */
+.btn-info {
+    width: 80%;
+    height: 35%;
+    font-size: 100%; 
     justify-content: center;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-color: #0f0f0f; 
-    color: #0ff; 
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-}
-
-/* Body width and padding adjustments */
-body {
-    width: 95vw;
-    padding-left: 0vw;
-    box-sizing: border-box; 
-}
-
-/* Navigation Bar Styling */
-.navigationbar {
-    width: 100%;
-    background: linear-gradient(90deg, #ff00cc, #3333ff); 
-    padding: 2vh 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative; 
-}
-
-/* Logo Styling */
-.logo {
-    position: absolute;
-    left: 0;
-}
-
-.logo img {
-    max-width: 90px;
-    height: auto; /* Maintain aspect ratio */
-    filter: drop-shadow(0 0 10px #ff00cc); 
-}
-
-/* Navbar Menu Items */
-.navbar-nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly; /* Space out the menu items */
-}
-
-/* Buttons with Dark Background and Neon Effects */
-.btn {
     color: #0ff;
-    background-color: #1f1f1f; 
+    background-color: #1f1f1f;
     border: 2px solid #0ff;
-    text-shadow: 0 0 5px #0ff; 
-    padding: 1.5vh 3vw;
-    margin: 0 1vw; 
+    text-shadow: 0 0 5px #0ff;
+    padding: 0.5em 0.5em; 
+    margin: 0.5em 0; 
     transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    font-size: 1em; 
-    border-radius: 5px; 
+    border-radius: 5px;
+    position: relative;
 }
 
-/* Hover Effects for Buttons */
-.btn:hover {
-    background-color: #0ff; 
-    color: #1f1f1f; 
-    transform: scale(1.1); 
-    box-shadow: 0 0 10px #0ff; 
-}
-
-/* Styling for Icons Inside Buttons */
-.btn i {
-    position: relative; 
-}
-
-/* Navbar Toggler Button */
-.navbar-toggler {
-    border: none; 
-}
-
-/* Search Bar Styling */
-.search-bar {
-    margin-top: 2vh;
-    display: flex;
-    align-items: center; 
-}
-
-.form-control {
-    width: 20vw;
-    margin-right: 1vw;
-}
-
-.btn-outline-success {
+/* Hover Effects for Edit Button */
+.btn-info:hover {
+    background-color: #0ff;
     color: #1f1f1f;
-    border-color: #0ff;
-    background-color: #1f1f1f; 
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px #0ff;
 }
 
-footer {
-    width: 100%;
+/* Edit User Button Styling */
+.btn-success {
+    width: 45%;
+    height: 35%;
+    font-size: 100%; 
+    justify-content: center;
+    color: rgb(43, 255, 0);
+    background-color: #1f1f1f;
+    border: 2px solid #2bff00;
+    text-shadow: 0 0 5px #2bff00;
+    padding: 0.5em 1em; 
+    margin: 0.5em 0; 
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Hover Effects for Edit User Button */
+.btn-sucess:hover {
+    background-color: #2bff00;
+    color: #1f1f1f;
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px #2bff00;
+}
+/* Add Product Button Styling */
+.btn-warning {
+    width: 45%;
+    height: 35%;
+    font-size: 100%; 
+    justify-content: center;
+    color: rgb(229, 255, 0);
+    background-color: #1f1f1f;
+    border: 2px solid #e5ff00;
+    text-shadow: 0 0 5px #e5ff00;
+    padding: 0.5em 1em; 
+    margin: 0.5em 0; 
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Hover Effects for Add Product Button */
+.btn-warning:hover {
+    background-color: #e5ff00;
+    color: #1f1f1f;
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px #e5ff00;
+}
+
+/* Delete Button Styling */
+.btn-danger {
+    width: 80%;
+    height: 35%;
+    font-size: 100%;
+    justify-content: center;
+    color: #f00;
+    background-color: #1f1f1f;
+    border: 2px solid #f00;
+    text-shadow: 0 0 5px #f00;
+    padding: 0.5em 0.5em; 
+    margin: 0.5em 0;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Hover Effects for Delete Button */
+.btn-danger:hover {
+    background-color: #f00;
+    color: #1f1f1f;
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px #f00;
+}
+
+/* Users List Styling */
+.users-list {
+    margin: 1em 0;
     text-align: center;
-    padding: 2vh; 
-    background: #20232a; 
-    color: #61dafb; 
-    text-shadow: 0 0 8px #61dafb; 
-    margin-top: 4vh; 
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-    position: relative; 
+    color: #0ff;
 }
 
-/* Additional Styles for Cyberpunk Aesthetic */
-h1, h2, h3, h4, h5, h6 {
-    color: #ff00cc; /* Neon pink color for headings */
-    text-shadow: 0 0 10px #ff00cc; /* Neon glow effect for headings */
-}
-
-a {
-    color: #0ff; /* Neon cyan color for links */
-    text-shadow: 0 0 5px #0ff; /* Neon glow effect for links */
-    text-decoration: none; /* Remove underline */
-}
-
-a:hover {
-    color: #ff00cc; /* Neon pink color on hover */
-    text-shadow: 0 0 10px #ff00cc; /* Stronger glow effect on hover */
+/* Employee and Customer Panels */
+.employee-panel, .customer-panel {
+    text-align: center;
+    color: #0ff;
+    margin: 1em;
 }

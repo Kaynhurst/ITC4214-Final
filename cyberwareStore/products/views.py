@@ -13,8 +13,15 @@ def index(request):
     cart = CheckoutCart.objects.all()
     sum = cart.count()
 
+    values = {
+        'productsList':productsList ,
+        'gradeList':gradeList,
+        'categoryList' : categoryList,
+        'total' : sum
+        }
+    
     if productsList is not None :
-        return render(request,'products/index.html',{'productsList':productsList , 'gradeList':gradeList, 'categoryList' : categoryList,'total' : sum})
+        return render(request,'products/index.html',values)
     else:
         return Http404("Something went wrong with database...")
     

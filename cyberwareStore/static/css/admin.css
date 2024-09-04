@@ -1,0 +1,134 @@
+/* Importing Orbitron font for a futuristic look */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+
+body {
+    background-color: #0f0f0f; 
+    color: #0ff; 
+    font-family: 'Orbitron', sans-serif;
+    overflow: scroll;
+}
+
+
+/* Admin class styling */
+.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0f0f;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Centering the form */
+.admin form {
+    background-color: #1f1f1f; 
+    padding: 4vh 6vw; 
+    border: 2px solid #0ff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 15px #0ff;
+    width: 45vw;
+    text-align: center;
+}
+
+/* Form field styling */
+.admin input[type="text"], 
+.admin input[type="password"],
+.admin input[type="number"],
+.admin select {
+    width: 100%;
+    padding: 1.5vh;
+    margin: 1.5vh 0;
+    border: 2px solid #0ff; 
+    background-color: #0f0f0f; 
+    color: #0ff; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em; 
+    border-radius: 5px;
+    box-shadow: 0 0 8px #0ff inset;
+    appearance: none; 
+}
+
+/* Styling specifically for number input */
+.admin input[type="number"]::-webkit-inner-spin-button, 
+.admin input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+/* Adding custom arrow for select dropdown */
+.admin select {
+    background-repeat: no-repeat;
+    background-position: right 1.5vh center;
+    padding-right: 3vh; 
+}
+
+/* Option styling */
+.admin option {
+    background-color: #1f1f1f;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+}
+
+/* Image select button styling */
+.admin input[type="file"] {
+    width: 100%;
+    padding: 1.5vh;
+    margin: 1.5vh 0;
+    border: 2px solid #0ff;
+    background-color: #0f0f0f;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #0ff inset;
+    cursor: pointer;
+}
+
+/* Button styling */
+.admin button[type="submit"] {
+    color: #0ff;
+    background-color: #1f1f1f; 
+    border: 2px solid #0ff;
+    text-shadow: 0 0 5px #0ff; 
+    padding: 1.5vh 3vw;
+    margin-top: 2vh;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    font-size: 1em; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+.admin button[type="submit"]:hover {
+    background-color: #0ff; 
+    color: #1f1f1f; 
+    transform: scale(1.1); 
+    box-shadow: 0 0 10px #0ff; 
+}
+
+/* Styling for the link */
+.admin a {
+    display: block;
+    margin-top: 2vh;
+    color: #ff00cc;
+    text-shadow: 0 0 10px #ff00cc; 
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.admin a:hover {
+    color: #0ff;
+    text-shadow: 0 0 15px #0ff;
+}
+
+/* Heading styling */
+.admin h2 {
+    color: #ff00cc;
+    text-shadow: 0 0 10px #ff00cc;
+    margin-bottom: 3vh;
+    font-size: 2em;
+}

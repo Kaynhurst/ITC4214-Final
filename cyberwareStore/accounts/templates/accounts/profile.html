@@ -1,0 +1,89 @@
+{%extends "base.html" %}
+
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if is_Employee %}
+
+    {% if message %}
+    <script>
+        alert("Product Added.")
+    </script>
+    {% endif %}
+    {% if user.is_superuser %}
+
+    <h1> Admin Panel </h1>
+    {% else %}
+
+        <h1> Employee Panel</h1>
+    {% endif%}
+
+    <!--Employee Panel-->
+    <h2> Products </h2>
+    <div id = "itemLayout" class="grid-container">
+
+        {%  for item in productsList %}
+            <div class="grid-item text-wrap productItem position-relative z-0" type="submit"
+                data-name = "{{item.productName}}"
+                data-price = "{{item.productPrice}}"
+                data-grade = "{{item.productGrade.gradeName}}"
+                data-category = "{{item.productCategory.categoryName}}">
+                <br>
+
+                <div class= "" id="productDescription" for="images">
+                    {{item.productName}}<br>
+                    {{item.productPrice}} <span class="fw-bold">$</span><br>
+                    {{item.productGrade.gradeName}}
+                    {{item.productCategory.categoryName}}
+                </div>
+                <div class="editButtons">
+                    <a href="{% url 'accounts:editProduct' item.pk %}">
+                        <button class="btn btn-info">Edit Product</button>
+                    </a>
+                    
+                    <a href="{% url 'accounts:deleteProduct' item.pk %}">
+                        <button class="btn btn-danger">Delete Product</button>
+                    </a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <a href="{% url 'accounts:addProduct' %}">
+        <button class="btn btn-lg btn-warning w-25">Add Product</button>
+    </a>
+
+    {% if user.is_superuser%}
+        <!--Admin Panel-->
+        <h2>Users</h2>
+        {% for member in users %}
+            {{member.username}}
+            <div class="editButtons">
+                <a href="{% url 'accounts:editUser' member.pk %}">
+                    <button class="btn btn-success w-25 pe-1">Edit User</button>
+                </a>
+                {%if not member.is_superuser %}
+                <a href="{% url 'accounts:deleteUser' member.pk %}">
+                    <button class="btn btn-danger w-25 pe-1">Delete User</button>
+                </a>
+                {% endif %}
+            </div>
+            <br>
+        {% endfor %}
+
+    {% endif %}
+
+{% else %}
+
+    <!--Customer Panel-->
+    <div class="customer-panel">
+        <h1> Customer Panel</h1>
+    </div>
+{% endif %}
+{% endblock %}
